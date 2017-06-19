@@ -25,6 +25,8 @@ var installationNotificationShown = false, lastNAPyRequestDurations = [];
 // These polyfills are placed here since all versions of IE require them and IE10+
 // does not support conditional comments. They could be moved to a separate file.
 
+var originalTextScrollHeight;
+
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Polyfill
 /* eslint-disable */
 if (typeof Object.assign != 'function') {
@@ -198,7 +200,7 @@ function synchronizeTextareaHeights() {
         'overflow-y': 'hidden',
         'height': 'auto'
     });
-    var originalTextScrollHeight = $('#originalText')[0].scrollHeight;
+    originalTextScrollHeight = $('#originalText')[0].scrollHeight;
     $('#originalText').css('height', originalTextScrollHeight + 'px');
     $('#translatedText').css('height', originalTextScrollHeight + 'px');
 }

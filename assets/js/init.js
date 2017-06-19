@@ -146,6 +146,10 @@ $(document).ready(function () {
         return false;
     });
 
+    $('#originalText').mouseup(function () {
+        $('#originalText').css('overflow-y', $('#originalText').height() < originalTextScrollHeight ? 'scroll' : 'hidden');
+    });
+
     $('#installationNotice').addClass('hide');
 });
 
